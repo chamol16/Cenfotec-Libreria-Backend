@@ -7,14 +7,14 @@ router.get("/obtener-premios", async (req, res) => {
 });
 
 router.post("/registrar-premio", async (req, res) => {
-  const { id, nombre } = req.body;
-  const nuevoPremio = new Premio({ id, nombre });
+  const { nombre } = req.body;
+  const nuevoPremio = new Premio({ nombre });
   await nuevoPremio.save();
   res.json({ status: "Premio registrado correctamente" });
 });
 router.put("/editar-premio/:id", async (req, res) => {
-  const { id, nombre } = req.body;
-  await Premio.findByIdAndUpdate(req.params, { id, nombre });
+  const { nombre } = req.body;
+  await Premio.findByIdAndUpdate(req.params, { nombre });
   res.json({ status: "Premio registrado correctamente" });
 });
 

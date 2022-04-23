@@ -2,9 +2,8 @@ const mongoose = require("mongoose");
 const { Schema } = require("mongoose");
 
 const SocioComercialSchema = new Schema({
-  id: { type: String, required: true, unique: true },
-  nombre: { type: String, required: true },
+  nombre: { type: String, required: true, unique: true },
   fechaInicio: { type: Date, required: true },
 });
 
-module.exports = mongoose.model("Premio", SocioComercialSchema);
+module.exports = mongoose.model("SocioComercial", SocioComercialSchema);

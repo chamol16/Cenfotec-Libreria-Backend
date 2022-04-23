@@ -8,9 +8,8 @@ router.get("/obtener-descuentos", async (req, res) => {
 });
 
 router.post("/registrar-descuento", async (req, res) => {
-  const { id, nombre, porcentaje } = req.body;
+  const { nombre, porcentaje } = req.body;
   const nuevoDescuento = new Descuento({
-    id,
     nombre,
     porcentaje,
   });
@@ -19,9 +18,8 @@ router.post("/registrar-descuento", async (req, res) => {
 });
 
 router.put("/editar-descuento/:id", async (req, res) => {
-  const { id, nombre, porcentaje } = req.body;
+  const { nombre, porcentaje } = req.body;
   await Descuento.findByIdAndUpdate(req.params.id, {
-    id,
     nombre,
     porcentaje,
   });

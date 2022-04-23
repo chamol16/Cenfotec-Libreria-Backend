@@ -9,7 +9,6 @@ router.get("/obtener-puntos-retiro", async (req, res) => {
 
 router.post("/registrar-punto-retiro", async (req, res) => {
   const { provincia, canton, distrito, direccion, socioId } = req.body;
-
   const nuevoPuntoRetiro = new PuntoRetiro({
     provincia,
     canton,
@@ -17,20 +16,19 @@ router.post("/registrar-punto-retiro", async (req, res) => {
     direccion,
     socioId,
   });
-
   await nuevoPuntoRetiro.save();
+  res.json({ status: "Punto de retiro registrado correctamente" });
 });
 
 router.put("/editar-punto-retiro/:id", async (req, res) => {
   const { provincia, canton, distrito, direccion, socioId } = req.body;
-  await PuntoRetiro.findByIdAndUpdate(
-    req.params.id,
+  await PuntoRetiro.findByIdAndUpdate(req.params.id, {
     provincia,
     canton,
     distrito,
     direccion,
-    socioId
-  );
+    socioId,
+  });
   res.json({ status: "Punto de retiro editado correctamente" });
 });
 
