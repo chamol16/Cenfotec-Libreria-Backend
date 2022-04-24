@@ -58,12 +58,15 @@ function handleError(res, reason, message, code) {
 }
 
 // Conexión a todas la rutas.
-
 app.use("/api", require("./routes/usuario.routes"));
 app.use("/api", require("./routes/autor.routes"));
 app.use("/api", require("./routes/libro.routes"));
-app.use("/api", require("./routes/premio.routes"));
 app.use("/api", require("./routes/generoLiterario.routes"));
 app.use("/api", require("./routes/descuento.routes"));
 app.use("/api", require("./routes/socioComercial.routes"));
 app.use("/api", require("./routes/punto-retiro.routes"));
+
+//fotos limit
+var bodyParser = require('body-parser');
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));

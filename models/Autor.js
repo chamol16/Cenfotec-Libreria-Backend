@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const AutorSchema = new Schema({
   nombreCompleto: { type: String, required: true },
-  foto: { type: String, required: true },
+  foto: { type: String, required: false },
   paisNacimiento: { type: String, required: true },
   fechaNacimiento: { type: Date, required: true },
   fechaDefuncion: { type: Date, required: false },

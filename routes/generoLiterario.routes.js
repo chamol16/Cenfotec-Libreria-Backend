@@ -8,15 +8,15 @@ router.get("/obtener-generos-literarios", async (req, res) => {
 });
 
 router.post("/registrar-genero-literario", async (req, res) => {
-  const { name } = req.body;
-  const nuevoGeneroLiterario = new GeneroLiterario({ name });
+  const { nombre } = req.body;
+  const nuevoGeneroLiterario = new GeneroLiterario({ nombre });
   await nuevoGeneroLiterario.save();
   res.json({ status: "Genero literario registrado correctamente" });
 });
 
 router.put("/editar-genero-literario/:id", async (req, res) => {
-  const { name } = req.body;
-  await GeneroLiterario.findByIdAndUpdate(req.params.id, { name });
+  const { nombre } = req.body;
+  await GeneroLiterario.findByIdAndUpdate(req.params.id, { nombre });
   res.json({ status: "Genero literario actualizado" });
 });
 

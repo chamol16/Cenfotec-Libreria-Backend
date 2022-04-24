@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const { Schema } = require("mongoose");
 
 const LibroSchema = new Schema({
-  foto: { type: String, required: true },
+  foto: { type: String, required: false },
   ISBN: { type: String, required: true, unique: true },
   nombre: { type: String, required: true },
   autor: { type: String },
@@ -19,12 +19,11 @@ const LibroSchema = new Schema({
   precio: { type: Number, required: true },
   descuento: { type: String, required: false },
   porcentajeDescuento: { type: Number, required: false },
-  stock: { type: Boolean, required: true },
   activo: { type: Boolean, required: true },
-  generoLiterario: { type: String, required: true },
+  generoLiterario: { type: String, required: false },
   idioma: { type: String, required: true },
-  autorId: { type: String, required: true },
-  generoLiterarioId: { type: String, required: true },
+  autorId: { type: String, required: false },
+  generoLiterarioId: { type: String, required: false },
   descuentoId: { type: String, required: false },
 });
 
