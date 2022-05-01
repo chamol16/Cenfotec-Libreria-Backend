@@ -31,7 +31,7 @@ const UsuarioSchema = new Schema({
   //admin
   position: { type: String, required: false },
   schedule: { type: String, required: false },
-  telefono: { type: String, required: false },
+  telefono: { type: Number, required: false },
   oficina: { type: String, required: false },
   tipoUsuario: { type: Number, required: true },
 });
