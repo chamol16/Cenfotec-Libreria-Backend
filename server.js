@@ -66,6 +66,7 @@ app.use("/api", require("./routes/descuento.routes"));
 app.use("/api", require("./routes/socioComercial.routes"));
 app.use("/api", require("./routes/punto-retiro.routes"));
 app.use("/api", require("./routes/pedido.routes"));
+app.use("/api", require("./routes/metodoPago.routes"));
 
 //fotos limit
 var bodyParser = require('body-parser');

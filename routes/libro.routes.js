@@ -93,7 +93,7 @@ router.put("/editar-libro/:id", async (req, res) => {
   res.json({ status: "Libro editado correctamente" });
 });
 
-router.delete("/editar-libro/:id", async (req, res) => {
+router.delete("/eliminar-libro/:id", async (req, res) => {
   await Libro.findByIdAndDelete(req.params.id);
   res.json({ status: "Libro eliminado correctamente" });
 });

@@ -7,11 +7,22 @@ router.get("/obtener-pedidos", async (req, res) => {
 });
 
 router.post("/registrar-pedido", async (req, res) => {
-  const { fechaRealizacion, precio, libros, userId } = req.body;
+  const {
+    fechaRealizacion,
+    precio,
+    libros,
+    metodoPagoId,
+    direccionDomiciliar,
+    puntoRetiroId,
+    userId,
+  } = req.body;
   const nuevoPedido = new Pedido({
     fechaRealizacion,
     precio,
     libros,
+    metodoPagoId,
+    direccionDomiciliar,
+    puntoRetiroId,
     userId,
   });
   await nuevoPedido.save();
@@ -19,11 +30,22 @@ router.post("/registrar-pedido", async (req, res) => {
 });
 
 router.put("/editar-pedido/:id", async (req, res) => {
-  const { fechaRealizacion, precio, libros, userId } = req.body;
+  const {
+    fechaRealizacion,
+    precio,
+    libros,
+    metodoPagoId,
+    direccionDomiciliar,
+    puntoRetiroId,
+    userId,
+  } = req.body;
   await Pedido.findByIdAndUpdate(req.params.id, {
     fechaRealizacion,
     precio,
     libros,
+    metodoPagoId,
+    direccionDomiciliar,
+    puntoRetiroId,
     userId,
   });
   res.json({ status: "Pedido editado correctamente" });

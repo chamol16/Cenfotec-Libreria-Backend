@@ -10,6 +10,9 @@ const PedidoSchema = new Schema({
       libroCantidad: { type: Number, required: true, unique: false },
     },
   ],
+  metodoPagoId: { type: String, required: true },
+  direccionDomiciliar: { type: String, required: false },
+  puntoRetiroId: { type: String, required: false },
   userId: { type: String, required: true },
 });
 
